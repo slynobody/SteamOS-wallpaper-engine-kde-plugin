@@ -1,1 +1,3 @@
-SteamOS-wallpaper-engine-kde-plugin
+kde-plugin wallpaper-engine (SteamOS)
+
+simply run ./install.sh
