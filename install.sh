@@ -11,10 +11,4 @@ tar -xvzf binaries/arch/sd/com/github/catsout/wallpaperEngineKde/libWallpaperEng
 rm binaries/arch/sd/com/github/catsout/wallpaperEngineKde/libWallpaperEngineKde.tar.gz
 cp -r kde/new/plasma/wallpapers/com.github.casout.wallpaperEngineKde /home/deck/.local/share/plasma/wallpapers
 sudo cp -r binaries/arch/sd/com /usr/lib/qt/qml/com/
-#for testing purposes
-sudo cp -r SteamLibrary/steamapps/common/wallpaper_engine  /home/deck/.steam/steam/steamapps/common
-sudo cp -r SteamLibrary/steamapps/workshop/content/431960 /home/deck/.steam/steam/steamapps/workshop/content
-#Default Steam library path on Linux: ~/.local/share/Steam
-#Default Steam library path on Linux (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
-#Default Steam Deck library path:/home/deck/.local/share/Steam
 sudo steamos-readonly enable
