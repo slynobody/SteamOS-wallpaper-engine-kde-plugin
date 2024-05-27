@@ -18,6 +18,7 @@
 > ./install.sh
 
 # after installation
+* sometimes a reboot is needed
 * simply choose the folder where steam installed wallpaper-engine (usually /home/deck/.steam/steam > paste it into the file-chooser)
 * enjoy
 
