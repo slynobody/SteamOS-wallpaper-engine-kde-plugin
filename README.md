@@ -10,8 +10,11 @@
 # installation
 
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
+> 
 > cd SteamOS-wallpaper-engine-kde-plugin
+>
 > chmod +x ./install.sh
+>
 > ./install.sh
 
 # after installation
