@@ -9,7 +9,7 @@
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# installation
+# installation (steam deck / arch)
 
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
 > 
@@ -18,6 +18,9 @@
 > chmod +x ./install.sh
 >
 > ./install.sh
+
+# installation (Debian)
+> install .deb
 
 # after installation
 * sometimes a reboot is needed
