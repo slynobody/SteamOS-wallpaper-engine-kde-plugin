@@ -1,4 +1,4 @@
-# kde-plugin wallpaper-engine (SteamOS / arch)
+# kde-plugin wallpaper-engine (SteamOS / arch + Debian)
 
 * lets you use wallpaper-engine-files natively 
 * KDE-Plasma Plugin (Desktop-Mode),
