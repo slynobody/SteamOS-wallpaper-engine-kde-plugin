@@ -20,7 +20,7 @@
 > ./install.sh
 
 # installation (Debian)
-> install .deb
+> apt install int_wallpaper_engine_1-1_amd64.deb
 
 # after installation
 * sometimes a reboot is needed
