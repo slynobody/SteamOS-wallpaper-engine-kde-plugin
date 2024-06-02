@@ -32,3 +32,5 @@
 > Default Steam library path on Linux: ~/.local/share/Steam
 > 
 > Default Steam library path on Linux (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
+>
+> <img src="https://images.pling.com/img/00/00/78/78/79/2160403/proxy-image1.jpeg"/>
