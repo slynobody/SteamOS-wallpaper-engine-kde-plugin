@@ -7,6 +7,8 @@
 
 > partially precompiled (through limitations of the compilation-capabilities of steamdecks, f.e. see https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177)
 
+<img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
+
 # installation
 
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
