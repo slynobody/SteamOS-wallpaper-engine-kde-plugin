@@ -33,4 +33,4 @@
 > 
 > Default Steam library path on Linux (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
 >
-> <img src="https://images.pling.com/img/00/00/78/78/79/2160403/proxy-image1.jpeg"/>
+> <img src="https://images.pling.com/img/00/00/78/78/79/2160403/proxy-image1.jpeg" alt="https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp=e30."/>
