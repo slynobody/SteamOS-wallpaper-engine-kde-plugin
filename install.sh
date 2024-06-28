@@ -1,7 +1,7 @@
 #!/bin/sh
 # wallpaper-engine alternative >> https://github.com/varietywalls/variety?tab=readme-ov-file
 # installer for arch (steam-deck), main lib-location is /usr/lib/qt/qml/com/github/catsout/wallpaperEngineKde/
-passwd
+echo >>> copying the wpe-library needs privileges >>> no password set yet? >>> simply enter 'passwd' 
 sudo steamos-readonly disable
 sudo pacman-key --init
 sudo pacman-key --populate archlinux
