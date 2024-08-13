@@ -1,9 +1,12 @@
-# kde-plugin wallpaper-engine (SteamOS / arch + Debian)
+# kde-plugin wallpaper-engine (SteamOS / arch + Debian / ubuntu)
 
 * lets you use wallpaper-engine-files natively 
 * KDE-Plasma Plugin (Desktop-Mode),
-* Steam deck (Desktop-Mode, right-click, background ...): v.0.5.5 (for kde 5.27, feel free to supply working files for plasma 6)
-* debian: v.0.5.5 (seperate deb-file) for kde 5.27, feel free to supply working files for plasma 6)
+* 
+* Steam deck (Desktop-Mode, right-click, background ...): v.0.5.5 (kde 5.27)
+*
+* debian / ubuntu: v.0.5.5 (seperate deb-file) for kde 5.27
+* debian / ubuntu: v.0.5.5 (seperate deb-file) for kde 6.1+
 
 > partially precompiled (through limitations of the compilation-capabilities of steamdecks, f.e. see https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177)
 
