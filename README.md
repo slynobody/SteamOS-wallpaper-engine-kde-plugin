@@ -21,10 +21,12 @@
 
 # installation (Debian, Plasma 5)
 > apt install int_wallpaper_engine_1-1_amd64.deb
+> 
 > (dependencies: gstreamer1.0-libav qml-module-qtwebchannel qml-module-qtwebsockets libgstreamer-plugins-bad1.0-0 gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gir1.2-gst-plugins-bad-1.0 python3-websockets libmpv2)
 
 # installation (Debian, Plasma 6)
 > apt install int_wallpaper_engine_qt6-1-1_amd64.deb
+> 
 > (dependencies: gstreamer1.0-libav qml-module-qtwebchannel qml-module-qtwebsockets libgstreamer-plugins-bad1.0-0 gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gir1.2-gst-plugins-bad-1.0 python3-websockets libmpv2 libqt6websockets6 qml6-module-qtwebsockets)
 
 # after installation
