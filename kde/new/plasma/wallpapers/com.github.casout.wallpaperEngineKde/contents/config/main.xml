@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="SteamLibraryPath" type="Path">
+      <label>Steam workshop path</label>
+      <default></default>
+    </entry>
+    <entry name="WallpaperWorkShopId" type="String">
+      <label>Wallpaper workshopid</label>
+      <default></default>
+    </entry>
+    <entry name="WallpaperSource" type="Path">
+      <label>Wallpaper Source</label>
+      <default></default>
+    </entry>
+    <entry name="BackgroundColor" type="String">
+      <label>Last folder used</label>
+      <default>black</default>
+    </entry>
+    <entry name="DisplayMode" type="Int">
+      <label>Video display mode</label>
+      <default>0</default>
+    </entry>
+    <entry name="PauseMode" type="Int">
+      <label>Video Pause mode</label>
+      <default>0</default>
+    </entry>
+    <entry name="PauseFilterByScreen" type="Bool">
+      <label>Filter By Screen</label>
+      <default>true</default>
+    </entry>
+    <entry name="PauseAcPlugin" type="Bool">
+      <label>Pause Ac Plugin</label>
+      <default>false</default>
+    </entry>
+    <entry name="PauseBatPercent" type="Int">
+      <label>Pause Battery Percent</label>
+      <default>0</default>
+    </entry>
+    <entry name="SortMode" type="Int">
+      <label>Sort mode</label>
+      <default>0</default>
+    </entry>
+    <entry name="FilterMode" type="Int">
+      <label>Filter mode</label>
+      <default>0</default>
+    </entry>
+    <entry name="VideoBackend" type="Int">
+      <label>Video Backend</label>
+      <default>0</default>
+    </entry>
+    <entry name="MuteAudio" type="Bool">
+      <label>Mute audio</label>
+      <default>true</default>
+    </entry>
+    <entry name="RandomizeWallpaper" type="Bool">
+      <label>Randomize every X minutes</label>
+      <default>false</default>
+    </entry>
+    <entry name="MpvStats" type="Bool">
+      <label>Mpv Stats</label>
+      <default>false</default>
+    </entry>
+    <entry name="MouseInput" type="Bool">
+      <label>Mouse Input</label>
+      <default>true</default>
+    </entry>
+    <entry name="Fps" type="Int">
+      <label>Fps</label>
+      <default>15</default>
+    </entry>
+    <entry name="SwitchTimer" type="Int">
+      <label>Change timer (in minutes)</label>
+      <default>120</default>
+    </entry>
+    <entry name="ResumeTime" type="Int">
+      <label>Resume time from paused (in ms)</label>
+      <default>300</default>
+    </entry>
+    <entry name="Volume" type="Int">
+      <label>Volume</label>
+      <default>100</default>
+    </entry>
+    <entry name="Speed" type="Double">
+      <label>Playback speed</label>
+      <default>1.0</default>
+    </entry>
+    <entry name="FilterStr" type="String">
+      <label>FilterStr</label>
+      <default></default>
+    </entry>
+    <entry name="PerOptChanged" type="Bool">
+      <label>PerOptChanged</label>
+      <default>false</default>
+    </entry>
+    <entry name="CustomConf" type="String">
+      <label>CustomConf</label>
+      <default></default>
+    </entry>
+  </group>
+</kcfg>
