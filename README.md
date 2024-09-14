@@ -10,7 +10,7 @@
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# installation (steam deck / arch)
+# installation (steam deck / arch (qt5))
 
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
 > 
