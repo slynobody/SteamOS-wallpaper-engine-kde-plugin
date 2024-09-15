@@ -17,7 +17,7 @@
 >
 > plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde
 >
-> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zstz
+> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
 
 # installation through git (steamdeck, *Plasma 5/qt5*)
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
