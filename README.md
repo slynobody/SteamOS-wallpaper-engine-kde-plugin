@@ -9,7 +9,7 @@
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# installation through pacman (steam deck / arch, *Plasma 5/qt5*))
+# installation through pacman (steam deck / arch, *Plasma 5/qt5*)
 
 > sudo steamos-readonly disable
 >
@@ -30,7 +30,7 @@
 
 >> if you already installed (through any version on discover or an outdated git-version), first run './remove.sh'
 
-# installation through apt (Debian, *Plasma 5 / qt5*)
+# installation through apt (Debian, *Plasma 5/qt5*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
@@ -39,7 +39,7 @@
 
 <sub> (no need to install the plugin through desktop or discover, gets installed system-wide)</sub>
 
-# installation through apt (Debian, *Plasma 6 / qt6*)
+# installation through apt (Debian, *Plasma 6/qt6*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
