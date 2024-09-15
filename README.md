@@ -1,17 +1,25 @@
 # kde-plugin wallpaper-engine (SteamOS / arch + Debian / ubuntu)
 
-* lets you use wallpaper-engine-files natively 
-* KDE-Plasma Plugin (Desktop-Mode),
-* * Steam deck (Desktop-Mode, right-click, background ...): v.0.5.5 (kde 5.27)
-* * debian / ubuntu: v.0.5.5 (seperate deb-file) for -> *kde 5.27*
-* * debian / ubuntu: v.0.5.5 (seperate deb-file) for -> *kde 6.1+*
+* lets you use wallpaper-engine-files natively (precompiled)
+* KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
 
-> partially precompiled (through limitations of the compilation-capabilities of steamdecks, f.e. see https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177)
+<sub> ** for Steam deck / arch: v.0.5.5 (for *kde 5.27*)  & for debian / ubuntu: v.0.5.5 (deb for *kde 5.27* + deb for *kde 6.1+*)</sub>
+
+<sub> ** precompiled for simple use & through limitations of the compilation-capabilities of steamdecks, f.e. see https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177)</sub>
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# installation (steam deck / arch (qt5))
+# installation through pacman (steam deck / arch, *Plasma 5/qt5*))
 
+> sudo steamos-readonly disable
+>
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
+>
+> plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde
+>
+> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zstz
+
+# installation through git (steamdeck, *Plasma 5/qt5*)
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
 > 
 > cd SteamOS-wallpaper-engine-kde-plugin
@@ -20,9 +28,9 @@
 >
 > ./install.sh
 
-if you already installed (through any version on discover or an outdated git-version), first run './remove.sh'
+>> if you already installed (through any version on discover or an outdated git-version), first run './remove.sh'
 
-# installation (Debian, *Plasma 5 / qt5*)
+# installation through apt (Debian, *Plasma 5 / qt5*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
@@ -31,7 +39,7 @@ if you already installed (through any version on discover or an outdated git-ver
 
 <sub> (no need to install the plugin through desktop or discover, gets installed system-wide)</sub>
 
-# installation (Debian, *Plasma 6 / qt6*)
+# installation through apt (Debian, *Plasma 6 / qt6*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
