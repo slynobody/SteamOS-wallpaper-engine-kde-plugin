@@ -9,15 +9,23 @@
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# installation through pacman (steam deck / arch, *Plasma 5/qt5*)
+# installation through pacman (steam deck, *Plasma 5/qt5*)
 
 > sudo steamos-readonly disable
+>
+> sudo pacman-key --init
+>
+> sudo pacman-key --populate archlinux
+>
+> sudo pacman-key --populate holo
 >
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
 >
 > plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde
 >
 > sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
+>
+> sudo steamos-readonly enable
 
 # installation through git (steamdeck, *Plasma 5/qt5*)
 > git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
