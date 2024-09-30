@@ -36,25 +36,21 @@
 >
 > ./install.sh
 
->> if you already installed (through any version on discover or an outdated git-version), first run './remove.sh'
+>> if you already installed (through discover or outdated git), first run './remove.sh'
 
 # installation through apt (Debian, *Plasma 5/qt5*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
-> 
-<sub> (installed dependencies: gstreamer1.0-libav qml-module-qtwebchannel qml-module-qtwebsockets libgstreamer-plugins-bad1.0-0 gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gir1.2-gst-plugins-bad-1.0 python3-websockets libmpv2)</sub>
 
-<sub> (no need to install the plugin through desktop or discover, gets installed system-wide)</sub>
+<sub> (no need to install the plugin through discover, gets installed system-wide)</sub>
 
 # installation through apt (Debian, *Plasma 6/qt6*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
-<sub>(installed dependencies: gstreamer1.0-libav qml-module-qtwebchannel qml-module-qtwebsockets libgstreamer-plugins-bad1.0-0 gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gir1.2-gst-plugins-bad-1.0 python3-websockets libmpv2 libqt6websockets6 qml6-module-qtwebsockets)</sub>
-
-<sub>(no need to install the plugin through desktop or discover, gets installed system-wide)</sub>
+<sub>(no need to install the plugin through discover, gets installed system-wide)</sub>
 
 # after installation
 * * sometimes a reboot is needed (if you dont temporary revert to another plugin to let it be configured)
