@@ -64,6 +64,9 @@
 > Default Steam library path on Linux (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
 >
 
+# it does not work!?!
+* WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
+
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
 >
