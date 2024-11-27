@@ -9,7 +9,7 @@
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# installation through pacman (steam deck / SteamOS until 3.6, *Plasma 5/qt5*)
+# SteamOS until 3.6 installation
 
 > sudo steamos-readonly disable
 >
@@ -27,16 +27,27 @@
 >
 > sudo steamos-readonly enable
 
-# installation through git (steamdeck, *Plasma 5/qt5*)
-> git clone https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin
-> 
-> cd SteamOS-wallpaper-engine-kde-plugin
+# SteamOS 3.7 installation
+> sudo steamos-readonly disable
 >
-> chmod +x ./install.sh
+> sudo pacman-key --init
 >
-> ./install.sh
+> sudo pacman-key --populate archlinux
+>
+> sudo pacman-key --populate holo
+>
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
+>
+> plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}'
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
+>
+> sudo steamos-readonly enable
 
->> if you already installed (through discover or outdated git), first run './remove.sh'
+# Arch-installation
+plasma 5? same as SteamOS 3.6
+plasma 6? same as SteamOS 3.6 
+(both: just the download & pacman-command)
 
 # installation through apt (Debian, *Plasma 5/qt5*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
@@ -66,6 +77,13 @@
 
 # it does not work!?!
 * WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
+
+# how do i get SteamOS 3.7?
+> Enter 'developer mode' (https://tuxexplorer.com/how-to-enable-developer-mode-on-steam-deck)
+> 
+> in developer-tab left enable 'extended update-channels'
+> 
+> in system-tab enable OS-Update-Channel 'Main'
 
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
