@@ -9,7 +9,7 @@
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
-# Arch-installation (Debian: see below)
+# Arch-installation (Debian / Ubuntu: see below)
 plasma 5? same as SteamOS 3.6
 plasma 6? same as SteamOS 3.7
 (both: just the download & pacman-command)
@@ -49,12 +49,12 @@ plasma 6? same as SteamOS 3.7
 >
 > sudo steamos-readonly enable
 
-# installation through apt (Debian, *Plasma 5/qt5*)
+# installation through apt ((*.deb, *Plasma 5/ qt5*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
-# installation through apt (Debian, *Plasma 6/qt6*)
+# installation through apt (*.deb, *Plasma 6/ qt6*)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
