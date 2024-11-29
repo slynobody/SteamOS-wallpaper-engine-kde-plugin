@@ -90,5 +90,10 @@ why? 3.7 includes mesa 24 making your graphics-card work smoother and in some ca
 > cd SteamOS-wallpaper-engine-kde-plugin
 >
 > ./remove.sh
+
+# Disclaimer
+1. Use at your own risk!
+2. This is for educational and research purposes only!
+3. No responsibility taken for any local customizations of the git!
 > 
 <a href="https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp=e30."><img src="https://images.pling.com/img/00/00/78/78/79/2160403/proxy-image1.jpeg"/></a>
