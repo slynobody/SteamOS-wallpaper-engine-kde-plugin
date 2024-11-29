@@ -81,7 +81,10 @@ plasma 6? same as SteamOS 3.7
 > 
 > in the new developer-tab on the left: enable 'extended update-channels'
 > 
-> go back to system-tab left: enable new OS-Update-Channel 'Main', check for updates
+> go back to system-tab left: enable new OS-Update-Channel 'Main', check for updates>
+>
+
+why? 3.7 includes mesa 24 making your graphics-card work smoother and in some cases faster. It also includes the latest version of plasma (driving the desktop-mode).
 
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
