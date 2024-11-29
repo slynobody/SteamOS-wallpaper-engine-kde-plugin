@@ -11,7 +11,9 @@
 
 # Arch-installation (Debian / Ubuntu: see below)
 plasma 5? same as SteamOS 3.6
+
 plasma 6? same as SteamOS 3.7
+
 (both: just the download & pacman-command)
 
 # SteamOS 3.6 installation
@@ -26,10 +28,10 @@ plasma 6? same as SteamOS 3.7
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
 >
-> plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
->
 > sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
->
+> 
+> plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
+> 
 > sudo steamos-readonly enable
 
 # SteamOS 3.7 installation
@@ -43,9 +45,9 @@ plasma 6? same as SteamOS 3.7
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
 >
+> udo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
+> 
 > kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
->
-> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
 >
 > sudo steamos-readonly enable
 
@@ -60,9 +62,9 @@ plasma 6? same as SteamOS 3.7
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
 
 # after installation
-* * reboot
-* * simply choose the folder where steam installed wallpaper-engine (usually /home/deck/.steam/steam > paste it into the file-chooser)
-* * enjoy
+* reboot
+* choose the folder where steam has installed wallpaper-engine (usually /home/deck/.steam/steam > paste it into the file-chooser)
+* enjoy
 
 # usual Steam Deck library path: /home/deck/.steam/steam (steam-deck) or /home/deck/.local/share/Steam
 > 
@@ -75,11 +77,11 @@ plasma 6? same as SteamOS 3.7
 * WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
 
 # how do i get SteamOS 3.7?
-> Enter 'developer mode' (https://tuxexplorer.com/how-to-enable-developer-mode-on-steam-deck)
+> gamemode, settings-tab left: scroll down, tap 'enter developer mode'
 > 
-> in developer-tab left enable 'extended update-channels'
+> in the new developer-tab on the left: enable 'extended update-channels'
 > 
-> in system-tab enable OS-Update-Channel 'Main', check for updates
+> go back to system-tab left: enable new OS-Update-Channel 'Main', check for updates
 
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
