@@ -1,4 +1,4 @@
-# kde-plugin wallpaper-engine (SteamOS / arch + Debian / ubuntu)
+# kde-plugin wallpaper-engine (arch / SteamOS + Debian / ubuntu)
 
 * use wallpaper-engine-files natively (linux, precompiled)
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
@@ -10,13 +10,25 @@
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
 
 # Arch-installation (Debian / Ubuntu: see below)
-plasma 5? same as SteamOS 3.6
+plasma 5
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
 
-plasma 6? same as SteamOS 3.7
+plasma 6
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
+> 
+plasma 6.3
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b_6.3/WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst
+)
+>
+> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
 
 (both: just the download (wget) & pacman-command)
 
-# SteamOS 3.6 installation
+# SteamOS 3.6
 
 > sudo steamos-readonly disable
 >
@@ -34,7 +46,7 @@ plasma 6? same as SteamOS 3.7
 > 
 > sudo steamos-readonly enable
 
-# SteamOS 3.7 installation
+# SteamOS 3.7
 > sudo steamos-readonly disable
 >
 > sudo pacman-key --init
@@ -51,13 +63,18 @@ plasma 6? same as SteamOS 3.7
 >
 > sudo steamos-readonly enable
 
-# installation through apt ((*.deb, *Plasma 5/ qt5*)
+# apt, Plasma 5/ qt5* (Debian / Ubuntu)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
-# installation through apt (*.deb, *Plasma 6/ qt6*)
+# apt, Plasma 6-6.2 / qt6 (Debian / Ubuntu)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
+> 
+> sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
+
+# apt, Plasma 6.3 / qt6 (Debian / Ubuntu)
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b/int_wallpaper_engine_qt6-1-1_amd64.deb)
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
 
