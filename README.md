@@ -1,13 +1,15 @@
-# kde-plugin wallpaper-engine (arch / SteamOS + Debian / ubuntu)
+# wallpaper-engine (kde-/plasma-plugin)
+## (arch / SteamOS + Debian / ubuntu)
 
 * use wallpaper-engine-files natively (linux, precompiled)
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
 
-<sub> ** for Steam Deck: v.0.5.5 (for *kde 5.27* + for *kde 6.2+*)  & for debian / ubuntu: v.0.5.5 (deb for *kde 5.27* + deb for *kde 6.1+*)</sub>
-
-<sub> ** precompiled for simple use (& through limitations of the compilation-capabilities of steamdecks, f.e. <a href="https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177">see</a>; *no need to install the plugin through discover*, gets installed system-wide through packages here)</sub>
+<sub> ** precompiled for simple use (f.e. through limits of steam-decks-compilation-capabilities, <a href="https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177">see</a>
 
 <img src="https://images.pling.com/img/00/00/78/78/79/2160403/screenshot-20240602-192228.png"/>
+
+# installation
+*no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
 # Arch-installation (Debian / Ubuntu: see below)
 plasma 5
@@ -29,13 +31,7 @@ plasma 6.3
 # SteamOS 
 SteamOS 3.6 (stable / beta)
 
-> sudo steamos-readonly disable
->
-> sudo pacman-key --init
->
-> sudo pacman-key --populate archlinux
->
-> sudo pacman-key --populate holo
+> sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
 >
@@ -45,14 +41,8 @@ SteamOS 3.6 (stable / beta)
 > 
 > sudo steamos-readonly enable
 
-SteamOS 3.7 (dev-Channel)
-> sudo steamos-readonly disable
->
-> sudo pacman-key --init
->
-> sudo pacman-key --populate archlinux
->
-> sudo pacman-key --populate holo
+SteamOS 3.8 (dev-Channel)
+> sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
 >
@@ -63,12 +53,12 @@ SteamOS 3.7 (dev-Channel)
 > sudo steamos-readonly enable
 
 # apt  (Debian / Ubuntu)
-Plasma 5/ qt5*
+Plasma 5 / qt5*
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
-Plasma 6-6.2 / qt6 
+Plasma 6 / qt6 
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
@@ -83,17 +73,16 @@ Plasma 6.3 / qt6
 * choose the folder where steam has installed wallpaper-engine (usually /home/deck/.steam/steam > paste it into the file-chooser)
 * enjoy
 
-# usual Steam Deck library path: /home/deck/.steam/steam (steam-deck) or /home/deck/.local/share/Steam
+# usual library path: ~/.local/share/Steam
+## or ~/.steam/steam (steam-deck)
 > 
-> Default Steam library path on Linux: ~/.local/share/Steam
-> 
-> Default Steam library path on Linux (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
+> Default Steam library path (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
 >
 
 # it does not work!?!
 * WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
 
-# how do i get SteamOS 3.7?
+# how do i get SteamOS 3.8?
 > gamemode, settings-tab left: scroll down, tap 'enter developer mode'
 > 
 > in the new developer-tab on the left: enable 'extended update-channels'
@@ -101,7 +90,7 @@ Plasma 6.3 / qt6
 > go back to system-tab left: enable new OS-Update-Channel 'Main', check for updates>
 >
 
-why? 3.7 includes mesa 24 making your graphics-card work smoother and in some cases faster. It also includes the latest version of plasma (driving the desktop-mode).
+why? 3.7ff includes mesa 24f, making your graphics-card work smoother and in some cases faster. It also includes the latest version of plasma (driving the desktop-mode).
 
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
