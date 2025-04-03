@@ -26,7 +26,7 @@ plasma 6.3
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b_6.3/WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst
 )
 >
-> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst --overwrite '*'
 
 # SteamOS 
 SteamOS 3.6 (stable / beta)
