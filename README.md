@@ -11,7 +11,7 @@
 # installation
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
-# Arch-installation (Debian / Ubuntu: see below)
+# Arch
 plasma 5
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
 >
