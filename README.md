@@ -1,5 +1,5 @@
 # wallpaper-engine (kde-/plasma-plugin)
-## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/edit/main/README.md#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/edit/main/README.md#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>
+## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>
 
 * use wallpaper-engine-files natively (linux, precompiled)
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
