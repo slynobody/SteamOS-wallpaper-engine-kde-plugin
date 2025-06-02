@@ -29,7 +29,7 @@ plasma 6.3
 > sudo pacman -U ./WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst --overwrite '*'
 
 # SteamOS 
-SteamOS 3.6 (stable / beta)
+SteamOS 3.7 (stable / beta)
 
 > sudo steamos-devmode enable --no-prompt
 >
@@ -41,7 +41,7 @@ SteamOS 3.6 (stable / beta)
 > 
 > sudo steamos-readonly enable
 
-SteamOS 3.8 (dev-Channel)
+SteamOS 3.8 (dev-Channel / 'main'))
 > sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
