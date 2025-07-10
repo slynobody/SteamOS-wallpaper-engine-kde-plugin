@@ -58,19 +58,20 @@ Plasma 5 / qt5*
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
-Plasma 6 / qt6 
+Plasma 6.3+ / qt6.8.2+ 
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c/int_wallpaper_engine_qt6-1-1_amd64.deb)
+> 
+> sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
+
+legacy-Plasma 6 (6.1-6.2)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
 
-Plasma 6.3 / qt6 
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b/int_wallpaper_engine_qt6-1-1_amd64.deb)
-> 
-> sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
 
 # after installation
 * reboot
-* choose the folder where steam has installed wallpaper-engine (usually /home/deck/.steam/steam > paste it into the file-chooser)
+* choose the folder where steam has installed wallpaper-engine (usually ~/.steam/steam > copy/paste it into the file-chooser)
 * enjoy
 
 # usual library path: ~/.local/share/Steam
