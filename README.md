@@ -12,25 +12,24 @@
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
 # Arch
-plasma 5
+
+plasma 6.3
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b_6.3/WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst --overwrite '*'
+
+Legacy: plasma 6
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
+
+Legacy: plasma 5
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
 
-plasma 6
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
->
-> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
-> 
-plasma 6.3
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b_6.3/WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst
-)
->
-> sudo pacman -U ./WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst --overwrite '*'
-
 # SteamOS 
 SteamOS 3.7 (stable / beta)
-
 > sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
@@ -53,20 +52,20 @@ SteamOS 3.8 (dev-Channel / 'main'))
 > sudo steamos-readonly enable
 
 # apt  (Debian / Ubuntu)
-Plasma 5 / qt5*
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
->
-> sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
-
 Plasma 6.3+ / qt6.8.2+ 
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c/int_wallpaper_engine_qt6-1-1_amd64.deb)
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
 
-legacy-Plasma 6 (6.1-6.2)
+Legacy: Plasma 6 (6.1-6.2)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
+
+Legacy: Plasma 5 / qt5*
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
+>
+> sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
 
 # after installation
@@ -90,8 +89,6 @@ legacy-Plasma 6 (6.1-6.2)
 > 
 > go back to system-tab left: enable new OS-Update-Channel 'Main', check for updates>
 >
-
-why? 3.7ff includes mesa 24f, making your graphics-card work smoother and in some cases faster. It also includes the latest version of plasma (driving the desktop-mode).
 
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
