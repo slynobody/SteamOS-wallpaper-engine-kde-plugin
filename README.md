@@ -14,7 +14,7 @@
 # Arch
 
 plasma 6.3
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5b_6.3/WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde6-3_1b-1-x86_64.pkg.tar.zst --overwrite '*'
 
@@ -32,7 +32,7 @@ Legacy: plasma 5
 SteamOS 3.7 (stable / beta)
 > sudo steamos-devmode enable --no-prompt
 >
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
 > > 
@@ -43,7 +43,7 @@ SteamOS 3.7 (stable / beta)
 SteamOS 3.8 (dev-Channel / 'main'))
 > sudo steamos-devmode enable --no-prompt
 >
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
 > 
