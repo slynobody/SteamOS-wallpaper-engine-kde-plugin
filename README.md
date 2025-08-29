@@ -1,5 +1,5 @@
 # wallpaper-engine (kde-/plasma-plugin)
-## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>
+## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>, <a href="https://github.com/slynobody/linux_waypaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
 
 * use wallpaper-engine-files natively (linux, precompiled)
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
@@ -67,7 +67,6 @@ Legacy: Plasma 5 / qt5*
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
-
 # after installation
 * reboot
 * choose the folder where steam has installed wallpaper-engine (usually ~/.steam/steam > copy/paste it into the file-chooser)
@@ -77,10 +76,10 @@ Legacy: Plasma 5 / qt5*
 ## or ~/.steam/steam (steam-deck)
 > 
 > Default Steam library path (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
->
 
 # it does not work!?!
 * WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
+* also try <a href="https://github.com/slynobody/linux_waypaper_engine__precompiled/tree/main">this.</a>
 
 # how do i get SteamOS 3.8?
 > gamemode, settings-tab left: scroll down, tap 'enter developer mode'
@@ -88,7 +87,9 @@ Legacy: Plasma 5 / qt5*
 > in the new developer-tab on the left: enable 'extended update-channels'
 > 
 > go back to system-tab left: enable new OS-Update-Channel 'Main', check for updates>
->
+
+# i dont use kde! (but gnome, lxqt, hyprland etc.)
+* try <a href="https://github.com/slynobody/linux_waypaper_engine__precompiled/tree/main">this.</a>
 
 # i want to remove this!
 > cd SteamOS-wallpaper-engine-kde-plugin
