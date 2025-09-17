@@ -77,8 +77,9 @@ Legacy: Plasma 5 / qt5*
 > 
 > Default Steam library path (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
 
-# it does not work!?!
+# it does not work!?! i get crashes!
 * WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
+* downgrade WPE-version in steam to 'windows 7 compatibility' (esp. when encountering crashes of 'scenes' formerly worked)
 * also try <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">this.</a>
 
 # how do i get SteamOS 3.8?
