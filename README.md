@@ -40,7 +40,7 @@ SteamOS 3.7 (stable / beta)
 > 
 > sudo steamos-readonly enable
 
-SteamOS 3.8 (dev-Channel / 'main'))
+SteamOS 3.9 (dev-Channel / 'main'))
 > sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
