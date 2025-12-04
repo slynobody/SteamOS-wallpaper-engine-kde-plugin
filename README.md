@@ -11,6 +11,8 @@
 # installation
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
+<noscript><a href="https://liberapay.com/integr/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
 # Arch
 
 plasma 6.3
@@ -27,6 +29,7 @@ Legacy: plasma 5
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
+
 
 # SteamOS 
 SteamOS 3.7 (stable / beta)
