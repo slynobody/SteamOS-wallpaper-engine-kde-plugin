@@ -15,12 +15,12 @@
 
 # Arch
 
-plasma 6.3
+plasma 6.3 (-6.5.4)
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst --overwrite '*'
 
-Legacy: plasma 6
+Legacy: plasma 6 (-6.2)
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
 >
 > sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
@@ -43,7 +43,7 @@ SteamOS 3.7 (stable / beta)
 > 
 > sudo steamos-readonly enable
 
-SteamOS 3.9 (dev-Channel / 'main'))
+SteamOS 3.9 (dev-Channel / 'main')
 > sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
@@ -55,7 +55,7 @@ SteamOS 3.9 (dev-Channel / 'main'))
 > sudo steamos-readonly enable
 
 # apt  (Debian / Ubuntu)
-Plasma 6.3+ / qt6.8.2+ 
+Plasma 6.3 (-6.5) / qt 6.8.2 (-6.9.2)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
@@ -81,7 +81,8 @@ Legacy: Plasma 5 / qt5*
 > Default Steam library path (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
 
 # crashes!
-* when CTRL+ALT+T (Terminal), then type in:
+
+* CTRL+ALT+T (Terminal), then type:
 
 > sed -i '/wallpaperEngineKde/d' ~/.config/plasma-org.kde.plasma.desktop-appletsrc & qdbus6 org.kde.Shutdown /Shutdown logout
 
@@ -91,7 +92,9 @@ Legacy: Plasma 5 / qt5*
 ```
 * also try <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">this.</a>
 
-# how do i get SteamOS 3.8?
+no responsibility taken for usage.
+
+# how do i get SteamOS 3.9?
 > gamemode, settings-tab left: scroll down, tap 'enter developer mode'
 > 
 > in the new developer-tab on the left: enable 'extended update-channels'
