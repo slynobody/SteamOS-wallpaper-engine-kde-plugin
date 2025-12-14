@@ -58,12 +58,12 @@ SteamOS 3.9 (dev-Channel / 'main')
 Plasma 6.3 (-6.5) / qt 6.8.2 (-6.9.2)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
-> sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
+> sudo apt install ./int_wallpaper_engine_qt6-1-1_amd64.deb
 
 Legacy: Plasma 6 (6.1-6.2)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5a/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
-> sudo apt install int_wallpaper_engine_qt6-1-1_amd64.deb
+> sudo apt install ./int_wallpaper_engine_qt6-1-1_amd64.deb
 
 Legacy: Plasma 5 / qt5*
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
