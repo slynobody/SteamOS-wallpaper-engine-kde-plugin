@@ -56,7 +56,7 @@ SteamOS 3.9 (dev-Channel / 'main')
 
 # apt  (Debian / Ubuntu)
 Plasma 6.3 (-6.5) / qt 6.8.2 (-6.9.2)
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c/int_wallpaper_engine_qt6-1-1_amd64.deb
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.54d/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install ./int_wallpaper_engine_qt6-1-1_amd64.deb
 
@@ -81,9 +81,7 @@ Legacy: Plasma 5 / qt5*
 > Default Steam library path (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
 
 # crashes!
-
-* CTRL+ALT+T (Terminal), then type:
-
+* CTRL+ALT+T (Terminal) -- or boot into konsole -- then type:
 > sed -i '/wallpaperEngineKde/d' ~/.config/plasma-org.kde.plasma.desktop-appletsrc & qdbus6 org.kde.Shutdown /Shutdown logout
 
 * WPE needs to be installed through steam before usage (main source of 'scene'-errors because of missing 'assets'-folder)
