@@ -14,6 +14,10 @@
 <noscript><a href="https://liberapay.com/integr/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
 # Arch
+plasma 6.5.4+
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst --overwrite '*'
 
 plasma 6.3 (-6.5.4)
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
@@ -46,9 +50,9 @@ SteamOS 3.7 (stable / beta)
 SteamOS 3.9 (dev-Channel / 'main')
 > sudo steamos-devmode enable --no-prompt
 >
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst
 >
-> sudo pacman -U ./WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst --overwrite '*'
 > 
 > kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
 >
@@ -56,7 +60,7 @@ SteamOS 3.9 (dev-Channel / 'main')
 
 # apt  (Debian / Ubuntu)
 Plasma 6.3 (-6.5) / qt 6.8.2 (-6.9.2)
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.54d/int_wallpaper_engine_qt6-1-1_amd64.deb
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install ./int_wallpaper_engine_qt6-1-1_amd64.deb
 
