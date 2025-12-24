@@ -1,7 +1,8 @@
+ [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://ko-fi.com/integr)
 # wallpaper-engine (kde-/plasma-plugin)
-## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>, <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
+## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary, Mint etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>, <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
 
-* use wallpaper-engine-files natively (linux, precompiled)
+* use wallpaper-engine-files natively (linux, precompiled
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
 
 <sub> ** precompiled for simple use (f.e. through limits of steam-decks-compilation-capabilities, <a href="https://github.com/catsout/wallpaper-engine-kde-plugin/issues/177">see</a>
@@ -10,8 +11,6 @@
 
 # installation
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
-
-<noscript><a href="https://liberapay.com/integr/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
 # Arch
 plasma 6.5.4+
