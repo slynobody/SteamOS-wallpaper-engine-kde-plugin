@@ -4,65 +4,42 @@ import org.kde.kirigami 2.4 as Kirigami
 
 Item {
     id: root_item
-    property var textColor
-    property var highlightColor
-    property var highlightedTextColor
-    property var backgroundColor
-    property var activeBackgroundColor
-    property var alternateBackgroundColor
-    property var linkColor
-    property var visitedLinkColor
-    property var positiveTextColor
-    property var positiveBackgroundColor
-    property var neutralTextColor
-    property var negativeTextColor
-    property var disabledTextColor
+
+    // Реактивные привязки к Kirigami.Theme для автоматического обновления при смене темы
+    property color textColor: Kirigami.Theme.textColor
+    property color highlightColor: Kirigami.Theme.highlightColor
+    property color highlightedTextColor: Kirigami.Theme.highlightedTextColor
+    property color backgroundColor: Kirigami.Theme.backgroundColor
+    property color activeBackgroundColor: Kirigami.Theme.activeBackgroundColor
+    property color alternateBackgroundColor: Kirigami.Theme.alternateBackgroundColor
+    property color linkColor: Kirigami.Theme.linkColor
+    property color visitedLinkColor: Kirigami.Theme.visitedLinkColor
+    property color positiveTextColor: Kirigami.Theme.positiveTextColor
+    property color positiveBackgroundColor: Kirigami.Theme.positiveBackgroundColor
+    property color neutralTextColor: Kirigami.Theme.neutralTextColor
+    property color negativeTextColor: Kirigami.Theme.negativeTextColor
+    property color disabledTextColor: Kirigami.Theme.disabledTextColor
 
     readonly property alias view: theme_view
-
-    property bool _init: {
-        setColor(name => Kirigami.Theme[name]);
-        return true;
-    }
-    function setColor(get_color) {
-        this.textColor                = get_color('textColor');
-        this.highlightColor           = get_color('highlightColor');
-        this.highlightedTextColor     = get_color('highlightedTextColor');
-        this.backgroundColor          = get_color('backgroundColor');
-        this.activeBackgroundColor    = get_color('activeBackgroundColor');
-        this.alternateBackgroundColor = get_color('alternateBackgroundColor');
-        this.linkColor                = get_color('linkColor');
-        this.visitedLinkColor         = get_color('visitedLinkColor');
-        this.positiveTextColor        = get_color('positiveTextColor');
-        this.positiveBackgroundColor  = get_color('positiveBackgroundColor');
-        this.neutralTextColor         = get_color('neutralTextColor');
-        this.negativeTextColor        = get_color('negativeTextColor');
-        this.disabledTextColor        = get_color('disabledTextColor');
-    }
 
     Item {
         id: theme_view
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         Kirigami.Theme.inherit: false
 
-        property var textColor
-        property var highlightColor
-        property var highlightedTextColor
-        property var backgroundColor
-        property var activeBackgroundColor
-        property var alternateBackgroundColor
-        property var linkColor
-        property var visitedLinkColor
-        property var positiveTextColor
-        property var positiveBackgroundColor
-        property var neutralTextColor
-        property var negativeTextColor
-        property var disabledTextColor
-
-        property bool _init: {
-            const setColor = root_item.setColor.bind(this);
-            setColor(name => Kirigami.Theme[name]);
-            return true;
-        }
+        // Реактивные привязки для View colorSet
+        property color textColor: Kirigami.Theme.textColor
+        property color highlightColor: Kirigami.Theme.highlightColor
+        property color highlightedTextColor: Kirigami.Theme.highlightedTextColor
+        property color backgroundColor: Kirigami.Theme.backgroundColor
+        property color activeBackgroundColor: Kirigami.Theme.activeBackgroundColor
+        property color alternateBackgroundColor: Kirigami.Theme.alternateBackgroundColor
+        property color linkColor: Kirigami.Theme.linkColor
+        property color visitedLinkColor: Kirigami.Theme.visitedLinkColor
+        property color positiveTextColor: Kirigami.Theme.positiveTextColor
+        property color positiveBackgroundColor: Kirigami.Theme.positiveBackgroundColor
+        property color neutralTextColor: Kirigami.Theme.neutralTextColor
+        property color negativeTextColor: Kirigami.Theme.negativeTextColor
+        property color disabledTextColor: Kirigami.Theme.disabledTextColor
     }
 }

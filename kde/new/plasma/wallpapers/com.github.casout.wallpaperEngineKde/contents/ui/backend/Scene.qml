@@ -23,6 +23,20 @@ Item{
             player.fillMode = SceneViewer.ASPECTCROP;
     }
 
+    // Force fillMode update on background.displayMode change
+    Timer {
+        id: displayModeFixTimer
+        interval: 50
+        repeat: false
+        onTriggered: sceneItem.displayModeChanged()
+    }
+    Connections {
+        target: background
+        function onDisplayModeChanged() {
+            displayModeFixTimer.restart();
+        }
+    }
+
     SceneViewer {
         id: player
         anchors.fill: parent
@@ -36,8 +50,8 @@ Item{
         }
 
         Connections {
-            ignoreUnknownSignals: true
-            onFirstFrame: {
+            target: player
+            function onFirstFrame() {
                 background.sig_backendFirstFrame('scene');
             }
         }
