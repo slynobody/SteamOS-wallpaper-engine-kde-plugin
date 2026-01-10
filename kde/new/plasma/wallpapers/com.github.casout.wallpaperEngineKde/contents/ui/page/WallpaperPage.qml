@@ -2,7 +2,7 @@ import QtQuick 2.6
 import QtQuick.Controls 2.3
 import QtQuick.Controls 2.3 as QQC
 import QtQuick.Window 2.0 // for Screen
-import QtQuick.Dialogs 1.2
+import QtQuick.Dialogs
 import QtQuick.Layouts 1.5
 
 import ".."
@@ -14,7 +14,7 @@ import "../js/bbcode.mjs" as BBCode
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 // for kcm gridview
-import org.kde.kcm 1.1 as KCM
+import org.kde.kcmutils as KCM
 import org.kde.kirigami 2.6 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0
 
@@ -94,8 +94,7 @@ RowLayout {
 
                     actions: [
                         Kirigami.Action {
-                            icon.source: '../../images/folder-outline.svg'
-                            icon.color: Theme.textColor
+                            icon.name: "folder-symbolic"
                             text: 'Library'
                             tooltip: cfg_SteamLibraryPath ? cfg_SteamLibraryPath : 'Select steam library dir'
                             onTriggered: wpDialog.open()
@@ -103,8 +102,7 @@ RowLayout {
                         Kirigami.Action {
                             id: action_cb_filter
                             text: 'Filter'
-                            icon.source: '../../images/filter.svg'
-                            icon.color: Theme.textColor
+                            icon.name: "view-filter"
                             property int currentIndex
                             readonly property var model: Common.filterModel
                             readonly property var modelValues: Common.filterModel.getValueArray(cfg_FilterStr)
@@ -118,8 +116,7 @@ RowLayout {
                         Kirigami.Action {
                             id: action_cb_sort
                             text: model[currentIndex].short
-                            icon.source: '../../images/arrow-down.svg'
-                            icon.color: Theme.textColor
+                            icon.name: "view-sort-descending-symbolic"
                             property int currentIndex: Common.modelIndexOfValue(model, cfg_SortMode)
                             readonly property var model: [
                                 {
@@ -141,8 +138,7 @@ RowLayout {
                             children: model.map((el, index) => comp_action_sort.createObject(null, {text: el.text, act_value: el.value}))
                         },
                         Kirigami.Action {
-                            icon.source: '../../images/refresh.svg'
-                            icon.color: Theme.textColor
+                            icon.name: "view-refresh-symbolic"
                             text: 'Refresh'
                             onTriggered: wpListModel.refresh()
                         }
@@ -172,6 +168,29 @@ RowLayout {
                     wpListModel.modelStartSync.connect(this.item.backtoBegin);
                     wpListModel.modelRefreshed.connect(refreshIndex.bind(this));
                 }
+
+                Kirigami.Heading {
+                    anchors.fill: parent
+                    anchors.margins: Kirigami.Units.largeSpacing
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.WordWrap
+                    visible: picViewLoader.item && picViewLoader.item.view.count === 0
+                    level: 2
+                    text: { 
+                        if(!(libcheck.qtwebsockets && pyext))
+                            return `Please make sure qtwebsockets(qml module) installed, and open this again`
+                        if(!pyext.ok) {
+                            return `Python helper run failed: ${pyext.log}`;
+                        }
+                        if(!cfg_SteamLibraryPath)
+                            return "Select your steam library through the folder selecting button above";
+                        if(wpListModel.countNoFilter > 0)
+                            return `Found ${wpListModel.countNoFilter} wallpapers, but none of them matched filters`;
+                        return `There are no wallpapers in steam library`;
+                    }
+                    opacity: 0.5
+                }
             }
             Component { 
                 id: picViewCom
@@ -181,6 +200,7 @@ RowLayout {
 
                     readonly property var currentModel: view.model.get(view.currentIndex)
                     readonly property var defaultModel: ListModel {}
+                    visible: view.count > 0
 
                     // from org.kde.image
                     view.implicitCellWidth: Screen.width / 10 + Kirigami.Units.smallSpacing * 2
@@ -205,11 +225,11 @@ RowLayout {
                         ]
                         thumbnail: Rectangle {
                             anchors.fill: parent
-                            QIconItem {
+                            Kirigami.Icon {
                                 anchors.centerIn: parent
                                 width: root.iconSizes.large
                                 height: width
-                                icon: "view-preview"
+                                source: "view-preview"
                                 visible: !imgPre.visible
                             }
                             Image {
@@ -232,30 +252,7 @@ RowLayout {
                         }
                     }
 
-                    Kirigami.Heading {
-                        anchors.fill: parent
-                        anchors.margins: Kirigami.Units.largeSpacing
-                        // FIXME: this is needed to vertically center it in the grid for some reason
-                        anchors.topMargin: picViewGrid.height
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        wrapMode: Text.WordWrap
-                        visible: picViewGrid.view.count === 0
-                        level: 2
-                        text: { 
-                            if(!(libcheck.qtwebsockets && pyext))
-                                return `Please make sure qtwebsockets(qml module) installed, and open this again`
-                            if(!pyext.ok) {
-                                return `Python helper run failed: ${pyext.log}`;
-                            }
-                            if(!cfg_SteamLibraryPath)
-                                return "Select your steam library through the folder selecting button above";
-                            if(wpListModel.countNoFilter > 0)
-                                return `Found ${wpListModel.countNoFilter} wallpapers, but none of them matched filters`;
-                            return `There are no wallpapers in steam library`;
-                        }
-                        opacity: 0.5
-                    }
+     
                     function backtoBegin() {
                         view.model = defaultModel
                         //view.positionViewAtBeginning();
@@ -297,16 +294,13 @@ RowLayout {
                 }
             }
 
-            FileDialog {
+            FolderDialog {
                 id: wpDialog
                 title: "Select steamlibrary folder"
-                selectFolder: true
-                selectMultiple : false
-                nameFilters: [ "All files (*)" ]
                 onAccepted: {
-                    const path = Utils.trimCharR(wpDialog.fileUrls[0], '/');
+                    const path = Utils.trimCharR(wpDialog.selectedFolder.toString(), '/');
                     cfg_SteamLibraryPath = path;
-                    wpListModel.refresh();
+                    return wpListModel.refresh();
                 }
             }
         }
@@ -376,7 +370,7 @@ RowLayout {
                     Layout.minimumHeight: implicitHeight
 
                     text: right_content.wpmodel.title
-                    color: Theme.textColor
+                    color: Theme.view.textColor
                     font.bold: true
                     textFormat: Text.PlainText
                     wrapMode: Text.Wrap
@@ -444,23 +438,23 @@ RowLayout {
                         actions: [
                             Kirigami.Action {
                                 id: right_act_favor
-                                icon.color: Theme.textColor
-                                icon.source: right_content.wpmodel.favor 
-                                    ? '../../images/bookmark.svg'
-                                    : '../../images/bookmark-outline-add.svg'
+                                
+                                icon.name: right_content.wpmodel.favor 
+                                    ? "bookmarks-symbolic"
+                                    : "bookmark-add-symbolic"
                                 tooltip: right_content.wpmodel.favor
                                     ? 'Remove from favorites'
                                     : 'Add to favorites'
                                 onTriggered: picViewLoader.item.toggleFavor(right_content.wpmodel)
                             },
                             Kirigami.Action {
-                                icon.source: '../../images/link.svg'
+                                icon.name: "emblem-symbolic-link"
                                 tooltip: "Open Workshop Link"
                                 enabled: right_content.wpmodel.workshopid.match(Common.regex_workshop_online)
                                 onTriggered: Qt.openUrlExternally(Common.getWorkshopUrl(right_content.wpmodel.workshopid))
                             },
                             Kirigami.Action {
-                                icon.source: '../../images/folder-outline.svg'
+                                icon.name: "folder-symbolic"
                                 tooltip: "Open Containing Folder"
                                 onTriggered: Qt.openUrlExternally(right_content.wpmodel.path) 
                             }
@@ -478,10 +472,15 @@ RowLayout {
                     readonly property bool _set_model: {
                         const wpmodel = right_content.wpmodel;
                         const tags = right_content.wpmodel.tags;
+                        const playlists = right_content.wpmodel.playlists;
                         const _model = this.model;
                         _model.clear();
                         for(const i of Array(tags.length).keys())
                             _model.append(tags.get(i));
+                        for(const i of Array(playlists.length).keys()){
+                            var playlist = playlists.get(i);
+                            if(playlist != null) { _model.append(playlists.get(i)); }
+                        }
                         _model.append({key: wpmodel.contentrating});
                         return true;
                     }
@@ -612,7 +611,7 @@ RowLayout {
                     }
 
                     header.text: 'Option'
-                    header.text_color: Theme.textColor
+                    header.text_color: Theme.view.textColor
                     header.icon: '../../images/cheveron-down.svg'
                     header.color: Theme.activeBackgroundColor
 
@@ -689,13 +688,13 @@ RowLayout {
                         ]
                         OptionItem {
                             text: modelData.text
-                            text_color: Theme.textColor
+                            text_color: Theme.view.textColor
 
                             property bool is_changed: right_opts.config && 
                                 right_opts.config_changes && 
                                 right_opts.has_change(modelData.config_key)
 
-                            icon: is_changed ? '../../images../../images/edit-pencil.svg' : ''
+                            icon: is_changed ? Qt.resolvedUrl('../../images/edit-pencil.svg') : ''
                             actor: Loader {
                                 sourceComponent: modelData.comp
                                 onLoaded: {
@@ -729,7 +728,7 @@ RowLayout {
 
                     visible: false
                     text: ''
-                    color: Theme.textColor
+                    color: Theme.view.textColor
                     readonly property bool _set_text: {
                         const path = Common.getWpModelProjectPath(right_content.wpmodel);
                         if(path) {

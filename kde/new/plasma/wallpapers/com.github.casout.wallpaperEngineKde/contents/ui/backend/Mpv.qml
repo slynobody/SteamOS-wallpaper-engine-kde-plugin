@@ -27,6 +27,20 @@ Item{
             player.setProperty("panscan", 0.0);
         }
     }
+
+    // Force displayMode update on background.displayMode change
+    Timer {
+        id: displayModeFixTimer
+        interval: 50
+        repeat: false
+        onTriggered: videoItem.displayModeChanged()
+    }
+    Connections {
+        target: background
+        function onDisplayModeChanged() {
+            displayModeFixTimer.restart();
+        }
+    }
     // it's ok for toggle, true will always cause a signal at first
     onStatsChanged: {
         player.command(["script-binding","stats/display-stats-toggle"]);

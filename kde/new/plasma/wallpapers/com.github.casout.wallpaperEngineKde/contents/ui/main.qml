@@ -1,7 +1,10 @@
-import QtQuick 2.12
-import QtQuick.Window 2.2
-import org.kde.plasma.core 2.0 as PlasmaCore
+import QtQuick
+import com.github.catsout.wallpaperEngineKde
+import QtQuick.Window
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasmoid
 
+WallpaperItem {
 Rectangle {
     id: background
     anchors.fill: parent
@@ -17,11 +20,12 @@ Rectangle {
     property int    fps: wallpaper.configuration.Fps
 
     property bool   randomizeWallpaper: wallpaper.configuration.RandomizeWallpaper
+    property bool   noRandomWhilePaused: wallpaper.configuration.NoRandomWhilePaused
     property bool   mouseInput: wallpaper.configuration.MouseInput
     property bool   mpvStats: wallpaper.configuration.MpvStats
 
-    property bool   pauseAcPlugin: wallpaper.configuration.PauseAcPlugin
-    property int   pauseBatPercent: wallpaper.configuration.PauseBatPercent
+    property bool   pauseOnBatPower: wallpaper.configuration.PauseOnBatPower
+    property int    pauseBatPercent: wallpaper.configuration.PauseBatPercent
 
     
     property var curOpt: ({})
@@ -40,6 +44,23 @@ Rectangle {
     property int    volume: get_opt_value('volume', wallpaper.configuration.Volume)
     property real    speed: get_opt_value('speed', wallpaper.configuration.Speed)
 
+    // Reactive bindings for configuration changes
+    Connections {
+        target: wallpaper.configuration
+        function onDisplayModeChanged() {
+            background.displayMode = background.get_opt_value('display_mode', wallpaper.configuration.DisplayMode);
+        }
+        function onMuteAudioChanged() {
+            background.mute = background.get_opt_value('mute_audio', wallpaper.configuration.MuteAudio);
+        }
+        function onVolumeChanged() {
+            background.volume = background.get_opt_value('volume', wallpaper.configuration.Volume);
+        }
+        function onSpeedChanged() {
+            background.speed = background.get_opt_value('speed', wallpaper.configuration.Speed);
+        }
+    }
+
     property bool   perOptChanged: wallpaper.configuration.PerOptChanged
     onPerOptChangedChanged: {
         pyext.read_wallpaper_config(workshopid).then((res) => this.curOpt = res);
@@ -47,6 +68,20 @@ Rectangle {
 
     // auto pause
     property bool   ok: !windowModel.reqPause && !powerSource.reqPause
+
+    // detect TTY switch and pause wallpaper(s)
+    TTYSwitchMonitor {
+        id: ttyMonitor
+        onTtySwitch: {
+            if (sleep) {
+                console.log("Preparing for sleep (possibly a VT switch)");
+                this.pause();
+            } else {
+                console.log("Waking up (VT switch back)");
+                this.play();
+            }
+        }
+    }
 
     property string nowBackend: ""
 
@@ -58,11 +93,11 @@ Rectangle {
     property string wallpaperPath
     property string wallpaperType
 
-    signal sig_backendFirstFrame(string backname);
-    onSig_backendFirstFrame: {
+    signal sig_backendFirstFrame(string backname)
+    function onBackendFirstFrame(backname) {
         console.error(`backend ${backname} first frame`);
-        if (wallpaper.hasOwnProperty('repaintNeeded'))
-            wallpaper.repaintNeeded();
+        if (wallpaper.hasOwnProperty('accentColor'))
+            wallpaper.accentColorChanged();
     }
 
     Component.onDestruction: {
@@ -111,8 +146,8 @@ Rectangle {
         interval: 2000
         property int tryTimes: 0
         onTriggered: {
-            tryTimes++; 
-            if(tryTimes >= 10 || !background.hasLib || !mouseInput) return;
+            tryTimes++;
+            if(tryTimes >= 10 || !background.hasLib || !background.mouseInput) return;
             if(background.mouseHooker) return;
             background.hookMouse();
         }
@@ -145,11 +180,6 @@ Rectangle {
                         anchors.fill: parent
                     }
             `, screenGrid);
-            /*
-            console.error(Common.genItemListStr(Window.contentItem, "  ", function(item) {
-                return `${item} {z: ${item.z}, w: ${item.width}, h: ${item.height}}`;
-            }));
-            */
             return true;
        }
        return false;
@@ -158,7 +188,6 @@ Rectangle {
     WindowModel {
         id: windowModel
         screenGeometry: wallpaper.parent.screenGeometry
-        activity: wallpaper.parent.activity
         filterByScreen: wallpaper.configuration.PauseFilterByScreen
         modePlay: wallpaper.configuration.PauseMode
         resumeTime: wallpaper.configuration.ResumeTime
@@ -167,7 +196,7 @@ Rectangle {
     PowerSource {
         id: powerSource
         readonly property bool reqPause: {
-            (background.pauseAcPlugin && !st_ac_plugin_in) ||
+            (background.pauseOnBatPower && (st_battery_state == 'NoCharge' || st_battery_state == 'Discharging')) ||
             (background.pauseBatPercent !== 0 && st_battery_has && st_battery_percent < background.pauseBatPercent)
         }
     }
@@ -179,6 +208,7 @@ Rectangle {
         id: wpListModel
         enabled: background.randomizeWallpaper
         workshopDirs: Common.getProjectDirs(background.steamlibrary)
+        globalConfigPath: Common.getGlobalConfigPath(background.steamlibrary)
         filterStr: background.filterStr
         initItemOp: (item) => {
             if(!background.customConf) return;
@@ -199,8 +229,10 @@ Rectangle {
         interval: background.switchTimer * 1000 * 60
         repeat: true
         onTriggered: {
-            const i = Math.round(Math.random() * wpListModel.model.count);
-            wpListModel.changeWallpaper(i);
+            if(!(background.noRandomWhilePaused && !background.ok)) {
+                const i = Math.round(Math.random() * wpListModel.model.count);
+                wpListModel.changeWallpaper(i);
+            }
         }
     }
 
@@ -345,4 +377,5 @@ Rectangle {
         lauchPauseTimer.start();
         randomizeTimer.start();
     }
+}
 }
