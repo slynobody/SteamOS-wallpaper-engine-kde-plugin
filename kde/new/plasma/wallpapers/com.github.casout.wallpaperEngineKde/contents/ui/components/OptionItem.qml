@@ -3,6 +3,7 @@ import "../style" as QQCC
 import QtQuick.Controls 2.12
 import QtQuick.Templates 2.12 as T
 import QtQuick.Layouts 1.10
+import ".."
 
 T.Control {
     id: item_root
@@ -65,6 +66,7 @@ T.Control {
                 Layout.leftMargin: 24
                 Layout.rightMargin: 16
 
+                color: Theme.textColor
                 textFormat: Text.PlainText
                 font.bold: false
                 wrapMode: Text.WordWrap
