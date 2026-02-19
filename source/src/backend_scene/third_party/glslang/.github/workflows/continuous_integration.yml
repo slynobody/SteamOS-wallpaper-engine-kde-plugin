@@ -1,0 +1,239 @@
+name: Continuous Integration
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+permissions: read-all
+
+jobs:
+  linux:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [{cc: clang, cxx: clang++}, {cc: gcc, cxx: g++}]
+        cmake_build_type: [Debug, Release]
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+        with:
+          python-version: '3.7'
+      - name: Setup ccache
+        uses: hendrikmuhs/ccache-action@faf867a11c028c0b483fb2ae72b6fc8f7d842714 # v1.2.12
+        with:
+          key: ubuntu-22-${{ matrix.cmake_build_type }}-${{ matrix.compiler.cc }}-${{matrix.compiler.cxx}}
+      - run: ./update_glslang_sources.py
+      - name: Configure
+        run: cmake -S . -B build -D CMAKE_BUILD_TYPE=${{ matrix.cmake_build_type }} -DBUILD_WERROR=ON -D GLSLANG_TESTS=ON
+        env:
+          CC: ${{matrix.compiler.cc}}
+          CXX: ${{matrix.compiler.cxx}}
+          CMAKE_GENERATOR: Ninja
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+      - name: Build
+        run: cmake --build build
+      - name: Install
+        run: cmake --install build --prefix build/install
+      - name: Test
+        run: ctest --output-on-failure --test-dir build
+      - name: Test (standalone)
+        run: cd Test && ./runtests
+
+  linux-asan:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [{cc: gcc, cxx: g++}]
+        cmake_build_type: [Debug]
+        flags: ['-fsanitize=address', '-fsanitize=thread']
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+        with:
+          python-version: '3.7'
+      - name: Setup ccache
+        uses: hendrikmuhs/ccache-action@faf867a11c028c0b483fb2ae72b6fc8f7d842714 # v1.2.12
+        with:
+          key: ubuntu-22-${{ matrix.cmake_build_type }}-${{ matrix.compiler.cc }}-${{matrix.compiler.cxx}}-${{matrix.flags}}
+      - run: ./update_glslang_sources.py
+      - name: Configure
+        run: cmake -S . -B build -D CMAKE_BUILD_TYPE=${{ matrix.cmake_build_type }} -D GLSLANG_TESTS=ON
+        env:
+          CC: ${{matrix.compiler.cc}}
+          CXX: ${{matrix.compiler.cxx}}
+          CMAKE_GENERATOR: Ninja
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+          CFLAGS: ${{matrix.flags}}
+          CXXFLAGS: ${{matrix.flags}}
+          LDFLAGS: ${{matrix.flags}}
+      - name: Build
+        run: cmake --build build
+      - name: Install
+        run: cmake --install build --prefix build/install
+      - name: Test
+        run: ctest --output-on-failure --test-dir build
+      - name: Test (standalone)
+        run: cd Test && ./runtests
+
+  # Ensure we can compile/run on an older distro
+  linux_min:
+    name: Linux Backcompat
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+        with:
+          python-version: '3.7'
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+        with:
+          cmakeVersion: 3.17.2
+      - name: Setup ccache
+        uses: hendrikmuhs/ccache-action@faf867a11c028c0b483fb2ae72b6fc8f7d842714 # v1.2.12
+        with:
+          key: linux_backcompat
+      - run: ./update_glslang_sources.py
+      - name: Configure
+        run: cmake -S . -B build -D CMAKE_BUILD_TYPE=Release -D GLSLANG_TESTS=ON
+        env:
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+      - name: Build
+        run: cmake --build build
+      - name: Install
+        run: cmake --install build --prefix build/install
+      - name: Test
+        run: ctest --output-on-failure --test-dir build
+      - name: Test (standalone)
+        run: cd Test && ./runtests
+
+  macos:
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-12, macos-13]
+        compiler: [{cc: clang, cxx: clang++}, {cc: gcc, cxx: g++}]
+        cmake_build_type: [Debug, Release]
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - run: ./update_glslang_sources.py
+      - run: cmake -S . -B build -D CMAKE_BUILD_TYPE=${{matrix.cmake_build_type}} -G Ninja -DBUILD_WERROR=ON -D GLSLANG_TESTS=ON
+        env:
+          CC: ${{matrix.compiler.cc}}
+          CXX: ${{matrix.compiler.cxx}}
+      - run: cmake --build build
+      - run: cmake --install build --prefix build/install
+      - run: ctest --output-on-failure --test-dir build
+      - name: Test Script (standalone)
+        run: ./runtests
+        working-directory: Test
+
+  windows:
+    runs-on: ${{matrix.os.genus}}
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+          os: [{genus: windows-2019, family: windows}]
+          cmake_build_type: [Debug, Release]
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+        with:
+          python-version: '3.7'
+      - run: python update_glslang_sources.py
+      - name: Build
+        run: |
+          cmake -S. -Bbuild -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX="$PWD/build/install" -DBUILD_WERROR=ON -D GLSLANG_TESTS=ON
+          cmake --build build --config ${{matrix.cmake_build_type}} --target install
+      - name: Test
+        run: ctest -C ${{matrix.cmake_build_type}} --output-on-failure --test-dir build
+      - name: Test (standalone)
+        run: bash -c 'cd ./Test && ./runtests'
+
+  iOS:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - name: Setup ccache
+        uses: hendrikmuhs/ccache-action@faf867a11c028c0b483fb2ae72b6fc8f7d842714 # v1.2.12
+        with:
+          key: IOS
+      - run: ./update_glslang_sources.py
+      # NOTE: The MacOS SDK ships universal binaries. CI should reflect this.
+      - name: Configure Universal Binary for iOS
+        run: |
+          cmake -S . -B build \
+          -D CMAKE_BUILD_TYPE=Debug \
+          -D CMAKE_SYSTEM_NAME=iOS \
+          "-D CMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
+          -G Ninja
+        env:
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+      - run: cmake --build build
+      - run: cmake --install build --prefix /tmp
+
+  android:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        # Android NDK currently offers 2 different toolchains.
+        # Test both to ensure we are compatible with either approach.
+        LEGACY: [ON, OFF]
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - name: Setup ccache
+        uses: hendrikmuhs/ccache-action@faf867a11c028c0b483fb2ae72b6fc8f7d842714 # v1.2.12
+        with:
+          key: android-${{ matrix.LEGACY }}
+      - run: ./update_glslang_sources.py
+      - name: Configure for Android
+        run: |
+          cmake -S . -B build/ --toolchain $ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake \
+          -D CMAKE_BUILD_TYPE=Release \
+          -D ANDROID_ABI=armeabi-v7a \
+          -D ANDROID_USE_LEGACY_TOOLCHAIN_FILE=${{ matrix.LEGACY }} \
+          -G Ninja
+        env:
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+      - run: cmake --build build/
+      - run: cmake --install build/ --prefix /tmp
+
+  emscripten:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+        with:
+          python-version: '3.7'
+      - uses: lukka/get-cmake@139aae96315b496d9af1b5e9abe53b15ca7eece8 # v3.28.3
+      - name: Setup ccache
+        uses: hendrikmuhs/ccache-action@faf867a11c028c0b483fb2ae72b6fc8f7d842714 # v1.2.12
+        with:
+          key: ubuntu-emscripten
+      - uses: mymindstorm/setup-emsdk@6ab9eb1bda2574c4ddb79809fc9247783eaf9021 # v14
+      - name: Update Glslang Sources
+        run: ./update_glslang_sources.py
+      - name: Configure
+        run: emcmake cmake -GNinja -Bbuild/web -DCMAKE_BUILD_TYPE=Release -DENABLE_GLSLANG_JS=ON -DENABLE_OPT=OFF
+        env:
+          CMAKE_GENERATOR: Ninja
+          CMAKE_C_COMPILER_LAUNCHER: ccache
+          CMAKE_CXX_COMPILER_LAUNCHER: ccache
+      - name: Build
+        run: cmake --build build/web
