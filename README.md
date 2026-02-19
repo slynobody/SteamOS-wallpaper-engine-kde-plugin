@@ -59,7 +59,7 @@ SteamOS 3.9 (dev-Channel / 'main')
 
 # apt  (Debian / Ubuntu)
 Plasma 6.3 (-6.5) / qt 6.8.2 (-6.9.2)
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55e/int_wallpaper_engine_qt6-1-1_amd64.deb
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.6_beta/int_wallpaper_engine_qt6-1-1_amd64.deb
 > 
 > sudo apt install ./int_wallpaper_engine_qt6-1-1_amd64.deb
 
