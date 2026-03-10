@@ -1,6 +1,7 @@
- [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://ko-fi.com/integr)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/slynobody/SteamOS-wallpaper-engine-kde-plugin/total)  [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://ko-fi.com/integr)
+
 # wallpaper-engine (kde-/plasma-plugin)
-## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary, Mint etc.), <a href="https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin">Fedora</a>, <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
+## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#arch-installation-debian--ubuntu-see-below">arch</a> (+ SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary, Mint etc.), <a href="https://github.com/Deadlydav/wallpaper-engine-kde-nobara">Fedora / Nobara</a>, <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
 
 * use wallpaper-engine-files natively (linux, precompiled
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
@@ -74,14 +75,22 @@ Legacy: Plasma 5 / qt5*
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
 
 # after installation
-* reboot
-* choose the folder where steam has installed wallpaper-engine (usually ~/.steam/steam > copy/paste it into the file-chooser)
-* enjoy
+1. **Switch Wallpaper Engine to the compatibility beta:** (**-> prevents plasma crashes / higher chances problematic wps run**)
+   - Steam -> Library -> right-click **Wallpaper Engine** -> Properties -> Beta
+   - Select **"win 7 compatibility"**
+2. **Restart Plasma:**
+   - Log out and back in, or run: `plasmashell --replace &` -- or restart
+3. **Configure your wallpaper:**
+   - Right-click desktop -> **Configure Desktop and Wallpaper**
+   - Change wallpaper type from **"Image"** to **"Wallpaper Engine"**
+   - Point it to your Steam library folder (the one containing `steamapps`) 
 
-# usual library path: ~/.local/share/Steam
-## or ~/.steam/steam (steam-deck)
+# common 'Steam library'-paths
+> ~/.local/share/Steam
 > 
-> Default Steam library path (Flatpak): ~/.var/app/com.valvesoftware.Steam/data/Steam
+> ~/.steam/steam (**steam-deck**)
+> 
+> ~/.var/app/com.valvesoftware.Steam/data/Steam (**Flatpak**)
 
 # crashes!
 * CTRL+ALT+T (Terminal) -- or boot into konsole -- then type:
