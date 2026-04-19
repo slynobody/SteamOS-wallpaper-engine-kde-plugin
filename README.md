@@ -14,7 +14,7 @@
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
 # SteamOS 
-SteamOS 3.8 (stable / beta)
+SteamOS 3.8.x (stable / beta)
 > sudo steamos-devmode enable --no-prompt
 >
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
