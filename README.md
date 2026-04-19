@@ -14,10 +14,10 @@
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
 # Arch
-plasma 6.5.4+
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1f-1-x86_64.pkg.tar.zst
+plasma 6.5.4+ (experimental)
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1h-1-x86_64.pkg.tar.zst
 >
-> sudo pacman -U ./WallpaperEngine_kde6-1.1f-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-1.1h-1-x86_64.pkg.tar.zst --overwrite '*'
 
 plasma 6.3-6.5.3
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
@@ -50,9 +50,9 @@ SteamOS 3.8 (stable / beta)
 SteamOS 3.9 (dev-Channel / 'main')
 > sudo steamos-devmode enable --no-prompt
 >
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst
 >
-> sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst --overwrite '*'
 > 
 > kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
 >
