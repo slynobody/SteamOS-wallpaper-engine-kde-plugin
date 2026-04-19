@@ -13,28 +13,6 @@
 # installation
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
-# Arch
-plasma 6.5.4+ (experimental)
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1h-1-x86_64.pkg.tar.zst
->
-> sudo pacman -U ./WallpaperEngine_kde6-1.1h-1-x86_64.pkg.tar.zst --overwrite '*'
-
-plasma 6.3-6.5.3
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
->
-> sudo pacman -U ./WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst --overwrite '*'
-
-Legacy: plasma 6-6.2)
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
->
-> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
-
-Legacy: plasma 5
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
->
-> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
-
-
 # SteamOS 
 SteamOS 3.8 (stable / beta)
 > sudo steamos-devmode enable --no-prompt
@@ -78,6 +56,28 @@ Legacy: Plasma 5 / qt5*
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5/int_wallpaper_engine_1-1_amd64.deb
 >
 > sudo apt install ./int_wallpaper_engine_1-1_amd64.deb
+
+# Arch
+plasma 6.6+ (experimental)
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1h-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1.1h-1-x86_64.pkg.tar.zst --overwrite '*'
+
+plasma 6.3-6.5.3
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst --overwrite '*'
+
+Legacy: plasma 6-6.2)
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_qt6_arch/WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1.1a-1-x86_64.pkg.tar.zst --overwrite '*'
+
+Legacy: plasma 5
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5_arch/WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde-1_1-1-x86_64.pkg.tar.zst --overwrite '*'
+
 
 # after installation
 1. **Switch Wallpaper Engine to the compatibility beta:** (**-> prevents plasma crashes / higher chances problematic wps run**)
