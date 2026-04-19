@@ -17,7 +17,7 @@
 plasma 6.5.4+
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1f-1-x86_64.pkg.tar.zst
 >
-> sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-1.1f-1-x86_64.pkg.tar.zst --overwrite '*'
 
 plasma 6.3-6.5.3
 > sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
