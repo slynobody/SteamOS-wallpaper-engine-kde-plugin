@@ -1,7 +1,7 @@
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/slynobody/SteamOS-wallpaper-engine-kde-plugin/total)  [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://ko-fi.com/integr)
 
 # wallpaper-engine (kde-/plasma-plugin)
-## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#Arch">arch</a> (SteamOS) + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary, Mint etc.), <a href="https://github.com/Deadlydav/wallpaper-engine-kde-nobara">Fedora / Nobara</a>, <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
+## <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#Arch">arch</a> <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#SteamOS">(SteamOS)</a> + <a href="https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/#apt--debian--ubuntu">Debian</a> (+ Ubuntu, Kali, Deepin, Elementary, Mint etc.), <a href="https://github.com/Deadlydav/wallpaper-engine-kde-nobara">Fedora / Nobara</a>, <a href="https://github.com/slynobody/linux_wallpaper_engine__precompiled/tree/main">other (f.e. hyprland)</a>
 
 * use wallpaper-engine-files natively (linux, precompiled
 * KDE-Plasma Plugin (Desktop-Mode: right-click, background ...)
