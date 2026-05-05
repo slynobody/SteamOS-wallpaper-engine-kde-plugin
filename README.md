@@ -109,15 +109,15 @@ Legacy: plasma 5
 
 
 # after installation
-1. **Switch Wallpaper Engine to the compatibility beta:** (**-> prevents plasma crashes / higher chances problematic wps run**)
-   - Steam -> Library -> right-click **Wallpaper Engine** -> Properties -> Beta
-   - Select **"win 7 compatibility"**
-2. **Restart Plasma:**
+1. **Restart Plasma:**
    - Log out and back in, or run: `plasmashell --replace &` -- or restart
-3. **Configure your wallpaper:**
+2. **Configure your wallpaper:**
    - Right-click desktop -> **Configure Desktop and Wallpaper**
    - Change wallpaper type from **"Image"** to **"Wallpaper Engine"**
    - Point it to your Steam library folder (the one containing `steamapps`) 
+3. (older versions) **Switch Wallpaper Engine to 'compatibility beta':** (**-> prevents plasma crashes / higher chances problematic wps run**)
+   - Steam -> Library -> right-click **Wallpaper Engine** -> Properties -> Beta
+   - Select **"win 7 compatibility"**
 
 # 'Steam library'-path (common)
 > ~/.local/share/Steam
