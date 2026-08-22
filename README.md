@@ -79,9 +79,9 @@ Legacy: Plasma 5 / qt5*
 # Arch
 plasma 6.7+
 (highly experimental)
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/WallpaperEngine_kde6-1_1k-1-x86_64.pkg.tar.zst
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/WallpaperEngine_kde6-1_1l-1-x86_64.pkg.tar.zst
 > 
-> sudo pacman -U ./WallpaperEngine_kde6-1_1k-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-1_1l-1-x86_64.pkg.tar.zst --overwrite '*'
 
 plasma 6.6+
 (experimental)
