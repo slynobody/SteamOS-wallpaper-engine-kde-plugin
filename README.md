@@ -44,7 +44,7 @@ SteamOS 3.8.x (beta)
 
 
 # apt  (Debian / Ubuntu)
-Plasma 6.6 (qt 6.10.2)
+Plasma 6.7 (qt 6.10.2)
 
 (experimental)
 > wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/int_wallpaper_engine_qt6-1-1b_amd64.deb
