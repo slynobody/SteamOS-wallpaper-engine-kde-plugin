@@ -14,7 +14,7 @@
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
 # SteamOS 
-SteamOS 3.8.x (beta)
+SteamOS 3.8.x (stable)
 
 > sudo steamos-devmode enable --no-prompt
 >
@@ -22,9 +22,11 @@ SteamOS 3.8.x (beta)
 >
 > sudo pacman -U ./WallpaperEngine_kde6-1.1d-1-x86_64.pkg.tar.zst --overwrite '*'
 > 
-> kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
+> kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image"}'
 >
 > sudo steamos-readonly enable
+
+ beta: on your own risk, use package-version approximating plasma / qt-version of current beta-build.
 
 <details>
   <summary>older</summary>
