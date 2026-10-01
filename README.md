@@ -44,10 +44,10 @@ SteamOS 3.8.x (beta)
 
 
 # apt  (Debian / Ubuntu)
-Plasma 6.7 (qt 6.10.2)
+Plasma 6.7
 
-(experimental)
-> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/int_wallpaper_engine_qt6-1-1c_amd64.deb
+(highly experimental, qt 6.11.2)
+> wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.98a/int_wallpaper_engine_qt6-1-1c_amd64.deb
 > 
 > sudo apt install ./int_wallpaper_engine_qt6-1-1c_amd64.deb
 
@@ -78,10 +78,10 @@ Legacy: Plasma 5 / qt5*
 
 # Arch
 plasma 6.7+
-(highly experimental)
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/WallpaperEngine_kde6-1_1m-1-x86_64.pkg.tar.zst
+(highly experimental, qt 6.11.2)
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.98a/WallpaperEngine_kde6-1_1m-1-x86_64.pkg.tar.zst
 > 
-> sudo pacman -U ./WallpaperEngine_kde6-1_1m-1-x86_64.pkg.tar.zst --overwrite '*'
+> sudo pacman -U ./WallpaperEngine_kde6-1_1m-1-x86_64.pkg.tar.zst--overwrite '*'
 
 plasma 6.6+
 (experimental)
