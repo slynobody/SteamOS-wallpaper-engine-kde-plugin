@@ -40,6 +40,7 @@ SteamOS 3.8.x (stable)
 > kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image"}'
 >
 > sudo steamos-devmode disable --no-prompt
+</details> 
 
 # apt  (Debian / Ubuntu)
 Plasma 6.7
