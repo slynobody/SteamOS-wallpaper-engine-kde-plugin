@@ -14,6 +14,21 @@
 *no need to install the plugin through discover*, everything gets installed system-wide through packages here</sub>
 
 # SteamOS 
+SteamOS 3.10 (main / developer, plasma 6.7.3 / qt 6.11.1 only) -- after installation log out
+
+> sudo steamos-devmode enable --no-prompt
+>
+> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/WallpaperEngine_kde6-1_1l-1-x86_64.pkg.tar.zst
+>
+> sudo pacman -U ./WallpaperEngine_kde6-1_1l-1-x86_64.pkg.tar.zst --overwrite '*'
+>
+> sudo steamos-devmode disable --no-prompt
+
+ beta: use package-version approximating plasma / qt-version of current beta-build.
+
+<details>
+  <summary>older (stable) </summary>
+ 
 SteamOS 3.8.x (stable)
 
 > sudo steamos-devmode enable --no-prompt
@@ -24,26 +39,7 @@ SteamOS 3.8.x (stable)
 > 
 > kpackagetool6 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image"}'
 >
-> sudo steamos-readonly enable
-
- beta: on your own risk, use package-version approximating plasma / qt-version of current beta-build.
-
-<details>
-  <summary>older</summary>
-  
- # install (SteamOS)
-> sudo steamos-devmode enable --no-prompt
->
-> sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.5.5c_arch/WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst
->
-> sudo pacman -U ./WallpaperEngine_kde6-3_1c-1-x86_64.pkg.tar.zst --overwrite '*'
->
-> plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///media/sda2/Background/SpaceWall/Escape_Function.jpg")}' & plasmashell --replace &
-> 
-> sudo steamos-readonly enable
-
-</details> 
-
+> sudo steamos-devmode disable --no-prompt
 
 # apt  (Debian / Ubuntu)
 Plasma 6.7
